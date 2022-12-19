@@ -1,5 +1,8 @@
 pipeline{
     agent{ label 'node3'}
+    trigger{
+        pollSCM('* * * * *')
+    }
     stages{
         stage('vcs') {
             steps{
@@ -12,5 +15,6 @@ pipeline{
                 sh 'docker image build -t peddiraju3122b/saleor-dashboard:DEV .'
             }
         }
+        
     }
 }
