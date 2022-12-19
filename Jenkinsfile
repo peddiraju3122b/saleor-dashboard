@@ -1,6 +1,6 @@
-pipeline{
-    agent{ label 'node3'}
-    trigger{
+pipeline {
+    agent { label 'node3'}
+    triggers {
         pollSCM('* * * * *')
     }
     stages{
