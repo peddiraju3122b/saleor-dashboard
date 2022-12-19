@@ -1,13 +1,13 @@
 pipeline{
     agent{ label 'node3'}
     stages{
-        stage('vcs'){
+        stage('vcs') {
             steps{
                 git url: 'https://github.com/peddiraju3122b/saleor-dashboard.git',
                 branch: 'main'
             }
         }
-        stage('build image'){
+        stage('build image') {
             steps{
                 sh 'docker image build -t peddiraju3122b/saleor-dashboard:DEV .'
             }
